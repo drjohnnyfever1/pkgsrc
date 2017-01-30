@@ -1,4 +1,4 @@
-$NetBSD: TODO,v 1.16971 2017/01/26 13:24:54 ryoon Exp $
+$NetBSD: TODO,v 1.16978 2017/01/30 12:08:01 mef Exp $
 
 Suggested new packages
 ======================
@@ -449,9 +449,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o avant-window-navigator-0.4.2
 	o avidemux-2.6.16
 	o avl-2.0.3 [2.x is not source and binary compatible with 1.x]
-	o avr-binutils-2.26
-	o avr-libc-2.0.0
-	o avrdude-6.3
 	o awesome-4.0
 	o baci-20040415
 	o base-1.4.5
@@ -536,7 +533,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o crossfire-1.71.0
 	o crossfire-client-gtk2-1.60.0
 	o csharp-mysql-6.9.8
-	o cvs-fast-export-1.38
 	o cvs2p4-2.5.5 [schmonz]
 	o cvsgraph-1.7.0
 	o cvsutils-0.2.6
@@ -794,7 +790,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o grantlee-5.0.0
 	o graphviz-2.40.1
 	o greed-4.1
-	o grep-2.25
 	o grilo-0.2.12
 	o grilo-plugins-0.2.14
 	o gromacs-5.1.2
@@ -1574,7 +1569,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o ufoai-2.3.1
 	o uhttpmock-0.5.0
 	o unicap-0.9.8
-	o unicode-screensaver-0.5
 	o units-2.12
 	o unrealircd-4.0.6
 	o uriparser-0.8.2
@@ -1646,7 +1640,6 @@ For possible Perl packages updates, see http://www.NetBSD.org/~wiz/perl.html.
 	o xforms-1.2.4
 	o xfs-1.1.1 [wip]
 	o xfsprogs-4.3.0
-	o xfstt-1.9.2
 	o xhippo-3.5
 	o xine-1.2.3
 	o xjman-0.7
