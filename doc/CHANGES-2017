@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2017,v 1.554 2017/02/03 02:32:14 wen Exp $
+$NetBSD: CHANGES-2017,v 1.570 2017/02/04 01:48:27 ryoon Exp $
 
 Changes to the packages collection and infrastructure in 2017:
 
@@ -708,3 +708,21 @@ Changes to the packages collection and infrastructure in 2017:
 	Updated devel/p5-MooseX-Types-Common to 0.001014 [wen 2017-02-03]
 	Updated devel/p5-MooseX-Types to 0.49 [wen 2017-02-03]
 	Updated devel/p5-Pegex to 0.63 [wen 2017-02-03]
+	Updated x11/libxklavier to 5.4nb2 [wiz 2017-02-03]
+	Updated x11/xdg-user-dirs to 0.15nb2 [leot 2017-02-03]
+	Updated www/py-feedgenerator to 1.9 [nils 2017-02-03]
+	Updated security/mozilla-rootcerts to 1.0.20170121 [maya 2017-02-03]
+	Updated www/py-pelican to 3.7.1nb1 [nils 2017-02-03]
+	Updated sysutils/salt to 2016.11.2 [sborrill 2017-02-03]
+	Updated sysutils/e2fsprogs to 1.43.4 [mef 2017-02-03]
+	Updated devel/py-mercurial to 4.1 [wiz 2017-02-03]
+	Added textproc/p5-String-Expand version 0.04 [hauke 2017-02-03]
+	Updated multimedia/gst-plugins1-libav to 1.10.3 [maya 2017-02-03]
+	Updated multimedia/gst-plugins1-good to 1.10.3 [maya 2017-02-03]
+	Updated multimedia/gst-plugins1-bad to 1.10.3 [maya 2017-02-03]
+	Updated multimedia/gst-plugins1-base to 1.10.3 [maya 2017-02-03]
+	Updated multimedia/gst-plugins1-ugly to 1.10.3 [maya 2017-02-03]
+	Updated lang/openjdk8 to 1.8.121 [ryoon 2017-02-04]
+	Added converters/libzmf version 0.0.1 [ryoon 2017-02-04]
+	Added converters/libstaroffice version 0.0.2 [ryoon 2017-02-04]
+	Updated misc/libreoffice to 5.3.0.3 [ryoon 2017-02-04]
