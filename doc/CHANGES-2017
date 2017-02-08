@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2017,v 1.646 2017/02/08 04:49:21 minskim Exp $
+$NetBSD: CHANGES-2017,v 1.651 2017/02/08 14:21:36 wiz Exp $
 
 Changes to the packages collection and infrastructure in 2017:
 
@@ -803,3 +803,8 @@ Changes to the packages collection and infrastructure in 2017:
 	Added www/py-cfscrape version 1.6.8 [joerg 2017-02-07]
 	Added devel/libpthread_dbg version 20161124 [kamil 2017-02-08]
 	Added devel/py-sortedcontainers version 1.5.7 [minskim 2017-02-08]
+	Updated www/firefox45 to 45.7.0nb2 [maya 2017-02-08]
+	Updated devel/apache-ant to 1.10.1 [prlw1 2017-02-08]
+	Updated devel/py-setuptools to 34.1.1 [wiz 2017-02-08]
+	Updated sysutils/p5-Unburden-Home-Dir to 0.4.0.1 [hauke 2017-02-08]
+	Updated audio/eyeD3 to 0.7.10 [wiz 2017-02-08]
