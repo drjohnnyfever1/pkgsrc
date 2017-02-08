@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2354 2017/02/06 22:28:54 maya Exp $
+# $NetBSD: Makefile,v 1.2357 2017/02/08 04:48:28 minskim Exp $
 #
 
 COMMENT=	Development utilities
@@ -569,6 +569,7 @@ SUBDIR+=	libpgm
 SUBDIR+=	libphutil
 SUBDIR+=	libportlib
 SUBDIR+=	libproplist
+SUBDIR+=	libpthread_dbg
 SUBDIR+=	librfuncs
 SUBDIR+=	librlog
 SUBDIR+=	librxspencer
@@ -872,6 +873,7 @@ SUBDIR+=	p5-Config-Any
 SUBDIR+=	p5-Config-Any-Merge
 SUBDIR+=	p5-Config-Auto
 SUBDIR+=	p5-Config-AutoConf
+SUBDIR+=	p5-Config-File
 SUBDIR+=	p5-Config-Find
 SUBDIR+=	p5-Config-General
 SUBDIR+=	p5-Config-GitLike
@@ -1942,6 +1944,7 @@ SUBDIR+=	py-setuptools
 SUBDIR+=	py-setuptools_scm
 SUBDIR+=	py-setuptools_trial
 SUBDIR+=	py-singledispatch
+SUBDIR+=	py-sortedcontainers
 SUBDIR+=	py-speaklater
 SUBDIR+=	py-spwd
 SUBDIR+=	py-stompclient
