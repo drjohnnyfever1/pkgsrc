@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1210 2017/02/09 06:38:03 wiz Exp $
+# $NetBSD: Makefile,v 1.1214 2017/02/14 07:33:27 adam Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -599,6 +599,7 @@ SUBDIR+=	py-bleach
 SUBDIR+=	py-blosxom
 SUBDIR+=	py-bottle
 SUBDIR+=	py-cfscrape
+SUBDIR+=	py-cheroot
 SUBDIR+=	py-cherrypy
 SUBDIR+=	py-clearsilver
 SUBDIR+=	py-curl
@@ -685,9 +686,11 @@ SUBDIR+=	py-mod_wsgi
 SUBDIR+=	py-mod_wsgi-metrics
 SUBDIR+=	py-moin
 SUBDIR+=	py-nevow
+SUBDIR+=	py-parsel
 SUBDIR+=	py-paste
 SUBDIR+=	py-pelican
 SUBDIR+=	py-pendrell
+SUBDIR+=	py-pystache
 SUBDIR+=	py-python-digest
 SUBDIR+=	py-python-mimeparse
 SUBDIR+=	py-python3-digest
@@ -696,6 +699,7 @@ SUBDIR+=	py-recaptcha
 SUBDIR+=	py-robobrowser
 SUBDIR+=	py-rss2gen
 SUBDIR+=	py-scgi
+SUBDIR+=	py-scrapy
 SUBDIR+=	py-simpletal
 SUBDIR+=	py-sparqlwrapper
 SUBDIR+=	py-static
@@ -709,6 +713,7 @@ SUBDIR+=	py-uliweb
 SUBDIR+=	py-urllib3
 SUBDIR+=	py-uwsgi
 SUBDIR+=	py-uwsgitop
+SUBDIR+=	py-w3lib
 SUBDIR+=	py-waitress
 SUBDIR+=	py-webassets
 SUBDIR+=	py-webcolors
