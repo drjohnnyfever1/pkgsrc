@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-pkgsrc-2016Q4,v 1.1.2.10 2017/02/12 22:01:02 spz Exp $
+$NetBSD: CHANGES-pkgsrc-2016Q4,v 1.1.2.13 2017/02/14 14:43:10 spz Exp $
 
 Changes to packages and infrastructure on the pkgsrc-$BRANCH branch:
 
@@ -85,6 +85,9 @@ www/apache2: security fix
 Pullup ticket #5207 - requested by wiz
 archivers/unzip: security fix
 
+Pullup ticket #5209 - requested by wiz
+www/viewvc: security fix
+
 Pullup ticket #5205 - requested by bsiegert
 net/tcpdump: security update
 
@@ -101,4 +104,10 @@ net/bind910: security update
 
 Pullup ticket #5211 - requested by taca
 net/bind99: security update
+
+Pullup ticket #5199 - requested by leot
+print/cups-filters: build fix
+
+Pullup ticket #5201 - requested by wiz
+net/tigervnc: security update
 
