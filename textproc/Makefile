@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.909 2017/03/01 10:32:11 leot Exp $
+# $NetBSD: Makefile,v 1.911 2017/03/08 15:05:14 wiz Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -363,6 +363,7 @@ SUBDIR+=	libyaml
 SUBDIR+=	link-grammar
 SUBDIR+=	lit2epub
 SUBDIR+=	lout
+SUBDIR+=	lowdown
 SUBDIR+=	lq-sp
 SUBDIR+=	lua-cjson
 SUBDIR+=	lua-expat
@@ -765,6 +766,7 @@ SUBDIR+=	py-snowballstemmer
 SUBDIR+=	py-sphinx
 SUBDIR+=	py-sphinx-rtd-theme
 SUBDIR+=	py-sphinx-theme-cloud
+SUBDIR+=	py-sphinxcontrib-newsfeed
 SUBDIR+=	py-textile
 SUBDIR+=	py-tinycss
 SUBDIR+=	py-uritemplate
