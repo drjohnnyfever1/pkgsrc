@@ -1,10 +1,10 @@
-# $NetBSD: Makefile,v 1.254 2017/03/12 09:45:08 leot Exp $
+# $NetBSD: Makefile,v 1.256 2017/03/24 16:55:15 wiz Exp $
 #
 
 COMMENT=	Multimedia utilities
 
 SUBDIR+=	acidrip
-SUBDIR+=	adobe-flash-player24
+SUBDIR+=	adobe-flash-player
 SUBDIR+=	adobe-flash-plugin11
 SUBDIR+=	alevt
 SUBDIR+=	audiocd-kio
@@ -182,7 +182,6 @@ SUBDIR+=	py-gstreamer0.10
 SUBDIR+=	py-gstreamer1
 SUBDIR+=	py-m3u8
 SUBDIR+=	py-ming
-SUBDIR+=	realplayer-codecs
 SUBDIR+=	regionset
 SUBDIR+=	replex
 SUBDIR+=	ruby-gnome2-clutter-gstreamer

@@ -1,4 +1,4 @@
-# $NetBSD: options.mk,v 1.53 2017/03/09 09:51:04 jperkin Exp $
+# $NetBSD: options.mk,v 1.55 2017/03/22 20:22:31 markd Exp $
 
 PKG_OPTIONS_VAR=		PKG_OPTIONS.MesaLib
 PKG_SUPPORTED_OPTIONS=		llvm dri
@@ -8,7 +8,7 @@ PKG_SUGGESTED_OPTIONS=
 # is also required to support the latest RADEON GPUs, so enable it
 # by default on platforms where such GPUs might be encountered.
 .if (${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "x86_64") && \
-	${OPSYS} != "SunOS"
+	${OPSYS} != "SunOS" && ${OPSYS} != "Darwin"
 PKG_SUGGESTED_OPTIONS+=		llvm
 .endif
 
@@ -178,6 +178,7 @@ CONFIGURE_ARGS+=	--enable-gallium-llvm
 CONFIGURE_ARGS+=	--enable-r600-llvm-compiler
 .include "../../devel/libelf/buildlink3.mk"
 CPPFLAGS+=		-I${BUILDLINK_PREFIX.libelf}/include/libelf
+BUILDLINK_API_DEPENDS.libLLVM+= libLLVM>=4.0
 .include "../../lang/libLLVM/buildlink3.mk"
 CONFIGURE_ENV+=		ac_cv_path_ac_pt_LLVM_CONFIG=${LLVM_CONFIG_PATH}
 .else # !llvm
