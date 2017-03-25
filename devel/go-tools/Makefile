@@ -1,13 +1,13 @@
-# $NetBSD: Makefile,v 1.11 2016/12/04 16:29:59 bsiegert Exp $
+# $NetBSD: Makefile,v 1.13 2017/03/20 22:53:45 bsiegert Exp $
 #
 
 DISTNAME=		tools
-PKGNAME=		go-tools-1.5
-PKGREVISION=		7
+PKGNAME=		go-tools-1.8
+PKGREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GITHUB:=golang/}
 GITHUB_PROJECT=		${DISTNAME}
-GITHUB_TAG=		d02228d
+GITHUB_TAG=		2946dd1
 
 MAINTAINER=		bsiegert@NetBSD.org
 HOMEPAGE=		http://golang.org/
@@ -20,7 +20,9 @@ GO_DIST_BASE=		${DISTNAME}-${GITHUB_TAG}*
 USE_TOOLS+=		bash
 REPLACE_BASH+=		cmd/godoc/setup-godoc-app.bash
 REPLACE_BASH+=		cmd/oracle/emacs-test.bash
+REPLACE_BASH+=		cmd/toolstash/buildall
 
 .include "../../lang/go/go-package.mk"
 .include "../../devel/google-api-go-client/buildlink3.mk"
+.include "../../security/go-crypto-acme/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
