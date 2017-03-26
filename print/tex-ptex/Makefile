@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.5 2016/06/16 04:06:15 markd Exp $
+# $NetBSD: Makefile,v 1.8 2017/03/26 15:01:53 mef Exp $
 
 DISTNAME=	ptex
 PKGNAME=	tex-${DISTNAME}-3.2pl41220
+PKGREVISION=	2
 TEXLIVE_REV=	41220
 
 MAINTAINER=	minskim@NetBSD.org
@@ -19,6 +20,8 @@ DEPENDS+=	tex-pbibtex-base-[0-9]*:../../print/tex-pbibtex-base
 DEPENDS+=	tex-ptex-base-[0-9]*:../../print/tex-ptex-base
 DEPENDS+=	tex-ptex-fonts-[0-9]*:../../fonts/tex-ptex-fonts
 DEPENDS+=	tex-tex-[0-9]*:../../print/tex-tex
+# switch.def
+DEPENDS+=	tex-babel-[0-9]*:../../print/tex-babel
 DEPENDS+=	web2c>=2010nb5:../../print/web2c
 
 #PKG_SYSCONFSUBDIR=	texmf
@@ -31,8 +34,5 @@ TEX_KANJIMAP_FILES+=	morisawa.map
 #TEX_TEXMF_DIRS+=	${PREFIX}/share/texmf-dist
 
 .include "../../print/texlive/package.mk"
-
-post-install:
-	${LN} -sf eptex ${DESTDIR}${PREFIX}/bin/platex
 
 .include "../../mk/bsd.pkg.mk"
