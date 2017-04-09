@@ -135,7 +135,6 @@ doc			Include the documentation.
 doxygen			Include doxygen based document.
 drac			Enable DRAC support.
 dri			Enable Direct Rendering support.
-drupal-xmlservices	Enable XML-based services.
 dspam-preferences-extension	Enable preferences extension.
 dspam-verbose-debug	Enable verbose debugging support.
 dspam-virtualusers	Enable support for virtual users.
@@ -616,6 +615,7 @@ qmail-outgoingip	Patch to force a particular source IP address.
 qmail-qregex		Patch to SMTP-reject customizable patterns.
 qmail-rcptcheck		Patch to SMTP-reject via a script or program.
 qmail-realrcptto	Patch to SMTP-reject nonexistent recipients.
+qmail-run-ofmipd	Enable dependency on mess822 for ofmipd service.
 qmail-srs		Patch to implement Sender Rewriting Scheme with libsrs2.
 qmail-viruscan		Patch to SMTP-reject certain types of MIME attachments.
 qpopper-servermode	Enable server mode.
