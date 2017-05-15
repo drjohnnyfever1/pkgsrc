@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1233 2017/04/23 05:24:51 markd Exp $
+# $NetBSD: Makefile,v 1.1239 2017/05/12 10:02:37 wiz Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -126,6 +126,8 @@ SUBDIR+=	firefox38
 SUBDIR+=	firefox38-l10n
 SUBDIR+=	firefox45
 SUBDIR+=	firefox45-l10n
+SUBDIR+=	firefox52
+SUBDIR+=	firefox52-l10n
 SUBDIR+=	gallery
 SUBDIR+=	gallery2
 SUBDIR+=	ganglia-webfrontend
@@ -589,6 +591,7 @@ SUBDIR+=	pup
 SUBDIR+=	py-ClientForm
 SUBDIR+=	py-FormEncode
 SUBDIR+=	py-HTMLgen
+SUBDIR+=	py-MechanicalSoup
 SUBDIR+=	py-PasteDeploy
 SUBDIR+=	py-PasteScript
 SUBDIR+=	py-Routes
@@ -612,6 +615,7 @@ SUBDIR+=	py-django-appmedia
 SUBDIR+=	py-django-classy-tags
 SUBDIR+=	py-django-cms
 SUBDIR+=	py-django-cmsplugin_gallery
+SUBDIR+=	py-django-contrib-comments
 SUBDIR+=	py-django-easy-thumbnails
 SUBDIR+=	py-django-filer
 SUBDIR+=	py-django-formtools
@@ -686,9 +690,11 @@ SUBDIR+=	py-jonpy
 SUBDIR+=	py-landslide
 SUBDIR+=	py-livereload
 SUBDIR+=	py-mechanize
+SUBDIR+=	py-meld3
 SUBDIR+=	py-mezzanine
 SUBDIR+=	py-mod_wsgi
 SUBDIR+=	py-mod_wsgi-metrics
+SUBDIR+=	py-model_mommy
 SUBDIR+=	py-moin
 SUBDIR+=	py-nbconvert
 SUBDIR+=	py-nbformat

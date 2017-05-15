@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.78 2017/03/16 11:41:19 maya Exp $
+# $NetBSD: Makefile,v 1.80 2017/05/08 15:33:34 jperkin Exp $
 
 DISTNAME=		${IRSSI_DISTNAME}
 CATEGORIES=		chat
@@ -17,9 +17,7 @@ GNU_CONFIGURE=		yes
 USE_LIBTOOL=		yes
 USE_TOOLS+=		pkg-config
 
-CONFIGURE_ARGS+=	--with-terminfo \
-			--with-proxy \
-			--without-ncurses \
+CONFIGURE_ARGS+=	--with-proxy \
 			--sysconfdir=${PKG_SYSCONFDIR}
 
 EGDIR=		${PREFIX}/share/examples/irssi
@@ -33,5 +31,6 @@ INSTALL_MAKE_FLAGS+=	sysconfdir=${EGDIR}
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/irssi-config ${DESTDIR}${IRSSI_CONFIG}
 
+.include "../../mk/curses.buildlink3.mk"
 .include "../../mk/terminfo.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
