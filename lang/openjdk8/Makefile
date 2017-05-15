@@ -1,8 +1,7 @@
-# $NetBSD: Makefile,v 1.47 2017/03/30 12:42:24 jperkin Exp $
+# $NetBSD: Makefile,v 1.49 2017/05/10 14:01:58 ryoon Exp $
 
-DISTNAME=	openjdk-1.8.121-20170131
-PKGNAME=	openjdk8-1.8.121
-PKGREVISION=	3
+DISTNAME=	openjdk-1.8.131-20170427
+PKGNAME=	openjdk8-1.8.131
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:=openjdk7/}
 EXTRACT_SUFX=	.tar.xz
@@ -146,7 +145,9 @@ SUBST_SED.fontpaths+=		-e 's|@BUILDLINK_PREFIX.fontconfig@|${BUILDLINK_PREFIX.fo
 SUBST_CLASSES+=			zlibpath
 SUBST_STAGE.zlibpath=		pre-build
 SUBST_FILES.zlibpath=		jdk/make/CompileLaunchers.gmk jdk/make/lib/CoreLibraries.gmk
+SUBST_FILES.zlibpath+=		jdk/make/lib/Awt2dLibraries.gmk jdk/make/lib/ServiceabilityLibraries.gmk
 SUBST_VARS.zlibpath=		COMPILER_RPATH_FLAG BUILDLINK_PREFIX.zlib
+SUBST_VARS.zlibpath+=		BUILDLINK_PREFIX.iconv
 
 PLIST_VARS+=	i386
 .if ${MACHINE_ARCH} == "i386"

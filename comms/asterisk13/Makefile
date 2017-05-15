@@ -1,11 +1,11 @@
-# $NetBSD: Makefile,v 1.24 2017/04/22 21:03:26 adam Exp $
+# $NetBSD: Makefile,v 1.26 2017/05/13 22:39:13 jnemeth Exp $
 #
 # NOTE: when updating this package, there are two places that sound
 #       tarballs need to be checked; look in ${WRKSRC}/sounds/Makefile
 #       to find out the current sound file versions
 
-DISTNAME=	asterisk-13.13.0
-PKGREVISION=	5
+DISTNAME=	asterisk-13.15.0
+#PKGREVISION=	4
 CATEGORIES=	comms net audio
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/
 MASTER_SITES+=	http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -31,10 +31,14 @@ CONFLICTS+=	asterisk-sounds-extra-[0-9]*
 
 USE_TOOLS+=		bison gmake perl:run pkg-config tar bash:run
 USE_LANGUAGES=		c c++
+REPLACE_BASH+=		contrib/scripts/ast_coredumper
+REPLACE_BASH+=		contrib/scripts/ast_logescalator
+REPLACE_BASH+=		contrib/scripts/ast_loggrabber
 REPLACE_BASH+=		contrib/scripts/astversion
 REPLACE_PERL+=		agi/DialAnMp3.agi agi/agi-test.agi
 REPLACE_PERL+=		agi/fastagi-test agi/jukebox.agi agi/numeralize
 REPLACE_PERL+=		contrib/scripts/vmail.cgi
+CHECK_INTERPRETER_SKIP+=	libdata/asterisk/scripts/refcounter.py
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/libdata
