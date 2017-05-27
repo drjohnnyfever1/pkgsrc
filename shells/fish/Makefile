@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.8 2017/05/13 01:19:05 wen Exp $
+# $NetBSD: Makefile,v 1.10 2017/05/19 15:27:58 fhajny Exp $
 
 FISHVER=		2.5.0
 DISTNAME=		fish-${FISHVER}
@@ -26,6 +26,8 @@ PKG_SHELL=		bin/fish
 REPLACE_PYTHON+=	share/tools/*.py
 REPLACE_PYTHON+=	share/tools/web_config/webconfig.py
 
+LDFLAGS.SunOS+=		-lintl
+
 .include "../../mk/bsd.prefs.mk"
 
 .if ${OPSYS} == "NetBSD" && exists(/usr/include/execinfo.h)
@@ -35,6 +37,13 @@ CXXFLAGS.NetBSD+=	-fpermissive
 LDFLAGS+=		-lexecinfo
 .endif
 
+# Upstream intentionally omits open.1 on Darwin
+PLIST_VARS+=	open
+.if ${OPSYS} != "Darwin"
+PLIST.open=	yes
+.endif
+
+.include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../lang/python/application.mk"
 .include "../../mk/curses.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

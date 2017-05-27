@@ -1,12 +1,12 @@
-# $NetBSD: Makefile,v 1.11 2017/05/10 03:45:51 adam Exp $
+# $NetBSD: Makefile,v 1.15 2017/05/24 11:28:37 adam Exp $
 
-DISTNAME=	hypothesis-3.8.3
+DISTNAME=	hypothesis-3.11.0
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PYPI:=h/hypothesis/}
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
-HOMEPAGE=	https://pypi.python.org/pypi/hypothesis/
+HOMEPAGE=	https://github.com/HypothesisWorks/hypothesis-python
 COMMENT=	Python library for property based testing
 LICENSE=	mpl-2.0
 
