@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.28 2017/03/20 13:56:18 wiz Exp $
+# $NetBSD: Makefile,v 1.31 2017/06/01 07:14:32 adam Exp $
 
-DISTNAME=	pytest-3.0.7
+DISTNAME=	pytest-3.1.1
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME:S/py//}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PYPI:=p/pytest/}
@@ -12,12 +12,13 @@ LICENSE=	mit
 
 DEPENDS+=	${PYPKGPREFIX}-py>=1.4.29:../../devel/py-py
 DEPENDS+=	${PYPKGPREFIX}-expat-[0-9]*:../../textproc/py-expat
+BUILD_DEPENDS+=	${PYPKGPREFIX}-setuptools_scm-[0-9]*:../../devel/py-setuptools_scm
 # TEST_DEPENDS
 BUILD_DEPENDS+=	${PYPKGPREFIX}-yaml-[0-9]*:../../textproc/py-yaml
 BUILD_DEPENDS+=	${PYPKGPREFIX}-hypothesis-[0-9]*:../../devel/py-hypothesis
-USE_TOOLS+=	bash:build
 
 USE_LANGUAGES=	# none
+USE_TOOLS+=	bash:build
 
 REPLACE_PYTHON+=	_pytest/standalonetemplate.py
 

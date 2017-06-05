@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.929 2017/05/09 13:18:48 leot Exp $
+# $NetBSD: Makefile,v 1.931 2017/06/04 16:50:10 taca Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -777,6 +777,7 @@ SUBDIR+=	py-sphinx
 SUBDIR+=	py-sphinx-rtd-theme
 SUBDIR+=	py-sphinx-theme-cloud
 SUBDIR+=	py-sphinxcontrib-newsfeed
+SUBDIR+=	py-sphinxcontrib-websupport
 SUBDIR+=	py-tabulate
 SUBDIR+=	py-textile
 SUBDIR+=	py-tinycss
@@ -866,6 +867,7 @@ SUBDIR+=	ruby-toml
 SUBDIR+=	ruby-treetop
 SUBDIR+=	ruby-ultraviolet
 SUBDIR+=	ruby-will-paginate
+SUBDIR+=	ruby-xhtmldiff
 SUBDIR+=	ruby-xmlparser
 SUBDIR+=	ruby-xpath
 SUBDIR+=	ruby-xslt
@@ -934,7 +936,6 @@ SUBDIR+=	xerces-c
 SUBDIR+=	xerces-j
 SUBDIR+=	xfce4-dict
 SUBDIR+=	xhtml
-SUBDIR+=	xhtmldiff
 SUBDIR+=	xml-coreutils
 SUBDIR+=	xml2
 SUBDIR+=	xml2doc

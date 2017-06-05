@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.696 2017/04/28 14:52:43 wiz Exp $
+# $NetBSD: Makefile,v 1.700 2017/06/02 15:14:15 jmcneill Exp $
 #
 
 COMMENT=	System utilities
@@ -124,6 +124,9 @@ SUBDIR+=	dmidecode
 SUBDIR+=	dmsdos
 SUBDIR+=	dog
 SUBDIR+=	dptutil
+SUBDIR+=	dtb-arm-tegra124
+SUBDIR+=	dtb-arm-vexpress
+SUBDIR+=	dtb-arm64-tegra210
 SUBDIR+=	dtc
 SUBDIR+=	dtpstree
 SUBDIR+=	duplicity
@@ -481,6 +484,7 @@ SUBDIR+=	rsyslog-dbi
 SUBDIR+=	rsyslog-elasticsearch
 SUBDIR+=	rsyslog-gnutls
 SUBDIR+=	rsyslog-gssapi
+SUBDIR+=	rsyslog-kafka
 SUBDIR+=	rsyslog-libgcrypt
 SUBDIR+=	rsyslog-mysql
 SUBDIR+=	rsyslog-pgsql
@@ -690,6 +694,8 @@ SUBDIR+=	xnc
 SUBDIR+=	xosview
 SUBDIR+=	xps
 SUBDIR+=	xuvmstat
+SUBDIR+=	zabbix
+SUBDIR+=	zabbix-frontend
 SUBDIR+=	zidrav
 SUBDIR+=	znapzend
 

@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1155 2017/04/22 17:52:37 taca Exp $
+# $NetBSD: Makefile,v 1.1157 2017/06/05 14:53:24 taca Exp $
 #
 
 COMMENT=	Networking tools
@@ -85,6 +85,7 @@ SUBDIR+=	couriertcpd
 SUBDIR+=	coursera-dl
 SUBDIR+=	csup
 SUBDIR+=	dante
+SUBDIR+=	daq
 SUBDIR+=	darkstat
 SUBDIR+=	dc_gui2
 SUBDIR+=	dcsharp
@@ -710,6 +711,7 @@ SUBDIR+=	ruby-net-ping
 SUBDIR+=	ruby-netaddr
 SUBDIR+=	ruby-netrc
 SUBDIR+=	ruby-pluggaloid
+SUBDIR+=	ruby-proxifier
 SUBDIR+=	ruby-public_suffix
 SUBDIR+=	ruby-rubytter
 SUBDIR+=	ruby-slack-api

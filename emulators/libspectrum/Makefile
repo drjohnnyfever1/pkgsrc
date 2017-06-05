@@ -1,7 +1,6 @@
-# $NetBSD: Makefile,v 1.38 2016/07/09 06:38:15 wiz Exp $
+# $NetBSD: Makefile,v 1.40 2017/06/05 04:45:40 adam Exp $
 
-DISTNAME=	libspectrum-1.1.1
-PKGREVISION=	4
+DISTNAME=	libspectrum-1.3.4
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 
@@ -14,7 +13,7 @@ USE_TOOLS+=		gmake perl pkg-config
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
 
-DOCDIR=		${PREFIX}/share/doc/libspectrum
+DOCDIR=			${PREFIX}/share/doc/libspectrum
 INSTALLATION_DIRS=	${DOCDIR}
 
 post-install:

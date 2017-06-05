@@ -1,7 +1,7 @@
 #!@PERL5@
 #
 # $OpenBSD: mdoclint,v 1.48 2016/01/24 20:10:48 schwarze Exp $
-# $NetBSD: mdoclint,v 1.70 2017/05/14 18:04:23 wiz Exp $
+# $NetBSD: mdoclint,v 1.74 2017/06/01 14:38:50 wiz Exp $
 #
 # Copyright (c) 2001-2017 Thomas Klausner
 # All rights reserved.
@@ -39,13 +39,11 @@ use Getopt::Std;
 use constant {
 	OPENBSD => 0,
 	NETBSD => 1,
-	SECTION_NAME => 2,
 };
 
 use vars qw(
-	$opt_D $opt_d $opt_e $opt_F $opt_f $opt_H $opt_h $opt_l
-	$opt_m $opt_n $opt_o $opt_p $opt_r $opt_S $opt_v $opt_w
-	$opt_X $opt_x
+	$opt_D $opt_d $opt_e $opt_F $opt_h $opt_l
+	$opt_m $opt_n $opt_o $opt_p $opt_r $opt_S $opt_v $opt_w $opt_x
 );
 
 
@@ -55,18 +53,15 @@ my $options="aDdeFfHhlmnoprSvwXx";
 
 sub usage
 	{
-	my $default = OPENBSD ? "-aDdfmnoprSXx" : "-aDdeflmnoprSXx";
+	my $default = OPENBSD ? "-DdmnoprSx" : "-DdelmnoprSx";
 
 	print STDERR <<"EOF";
 mdoclint: verify man page correctness
 usage:	mdoclint [-$options] file ...
-	-a	warn about SEE ALSO section problems
 	-D	warn about bad casing and archs in .Dt
 	-d	warn about bad date strings (in .Dd only)
 	-e	warn about unsorted errors (for functions)
 	-F	fix whitespace problems (asks before overwriting)
-	-f	warn about possible incorrect .Fn syntax
-	-H	warn about characters that produce problems in HTML output
 	-h	display this help text
 	-l	warn about unknown libraries
 	-m	warn about man pages that are not in mdoc(7) format
@@ -77,20 +72,12 @@ usage:	mdoclint [-$options] file ...
 	-S	warn about any .Sh weirdness
 	-v	verbose output
 	-w	show section header in warnings
-	-X	warn about explicit mentions of the *BSD system names
 	-x	warn about cross-references with missing targets
 Default is $default if no flag is specified.
 EOF
 	exit(0);
 }
 
-
-my %short = (
-    "Free" => ".Fx",
-    "Net" => ".Nx",
-    "DragonFly" => ".Dx",
-    "Open" => ".Ox"
-);
 
 my %libraries = (
     "libarchive" => 1,
@@ -249,12 +236,12 @@ sub handle_options
 	$opt_h and usage();
 
 	# default to all warnings if no flag is set
-	unless ($opt_D or $opt_d or $opt_e or $opt_f or $opt_H or $opt_l
+	unless ($opt_D or $opt_d or $opt_e or $opt_l
 		or $opt_m or $opt_n or $opt_o or $opt_p or $opt_r
-		or $opt_S or $opt_X or $opt_x) {
-		$opt_D = $opt_d = $opt_f = $opt_m =
+		or $opt_S or $opt_x) {
+		$opt_D = $opt_d = $opt_m =
 		    $opt_n = $opt_o = $opt_p = $opt_r = $opt_S =
-		    $opt_X = $opt_x = 1;
+		    $opt_x = 1;
 		$opt_e = $opt_l = 1 if NETBSD;
 	}
 }
@@ -304,8 +291,6 @@ sub new
 		changes => 0,
 		oxrcsidseen => 0,
 		nxrcsidseen => 0,
-		lastsh => 0,
-		in_section => 0,
 		inliteral => 0,
 		shseen => {},
 		last_error_name => '',
@@ -351,9 +336,6 @@ sub parse_macro_args
 			push(@params, $1);
 		}
 	}
-	if (@params > 9 and OPENBSD) {
-		$s->warning("$string holds >9 parameters");
-	}
 	return @params;
 }
 
@@ -362,22 +344,11 @@ sub set_section_header
 	my ($s, $section_header) = @_;
 	$section_header = join(' ', $s->parse_macro_args($section_header));
 
-	if ($section_header eq 'NAME') {
-		$s->{in_section} = SECTION_NAME;
-	} else {
-		$s->{in_section} = 0;
-	}
-
 	if (not $sections{$section_header}) {
 		$s->warning("unknown section header: ",
 		    "`$section_header'") if $opt_S;
 	} else {
-		if ($s->{lastsh} >= $sections{$section_header}) {
-			$s->warning("section header ",
-			    "`$section_header' in wrong order") if $opt_S;
-		}
 		$s->{shseen}->{$section_header} = 1;
-		$s->{lastsh} = $sections{$section_header};
 	}
 
 	$s->{current_section_header} = $section_header;
@@ -452,41 +423,12 @@ sub process_line
 		}
 	}
 
-	if ($s->{in_section} == SECTION_NAME) {
+	if ($s->{current_section_header} eq "NAME") {
 		if (/^\.Nm\s+(\S+)/o) {
 			$s->{names}{$1.$s->{sec}} = 1;
 		}
 	}
 
-	if (/^\.Fn.*,.+/o) {
-		$s->warning("possible .Fn misuse: `$_'") if $opt_f;
-	}
-	if (OPENBSD) {
-		if (/^(?:[<>])/o or /[^\\][<>]/o) {
-			$s->warning("use \*(Lt \*(Gt (or .Aq) ",
-			    "instead of < >: `$_'") if $opt_H;
-		}
-	}
-	if (NETBSD) {
-		if (/^(?:[<>&])/o or /[^\\][<>&]/o) {
-			$s->warning("use \*[Lt] \*[Gt] (or .Aq) \*[Am] ",
-			    "instead of < > &: `$_'") if $opt_H;
-		}
-	}
-
-	if (/\b(Free|Net|DragonFly|Open)BSD\b/o
-	    and not /\b(?:www|ftp)\.(?:Free|Net|DragonFly|Open)BSD\.org\b/o
-	    and not /\bOpenBSD\::.*3p\b/o
-	    and not /\/pub\/OpenBSD\//o
-	    and not /\@(?:Free|Net|Open)BSD\.(?i:org)\b/o) {
-		$s->warning("verbose mention of `$1BSD' instead of "
-		    . "`$short{$1}': `$_'") if $opt_X;
-	}
-	if (/^\./o and (/Bx (Open)/o or /Bx (Free)/o
-			or /Bx (DragonFly)/o or /Bx (Net)/o)) {
-		$s->warning("`.Bx $1' found -- use $short{$1} instead")
-		    if $opt_X;
-	}
 	if (/^\.Lb\s+(\S+)/o) {
 		if (not $libraries{$1}) {
 			$s->warning("Unknown library `$1' used as Lb argument") if $opt_l;
