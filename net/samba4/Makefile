@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.30 2017/05/24 15:51:32 he Exp $
+# $NetBSD: Makefile,v 1.32 2017/06/01 13:30:26 jlam Exp $
 
 DISTNAME=	samba-${VERSION}
 CATEGORIES=	net
@@ -108,6 +108,9 @@ LDFLAGS+=		${COMPILER_RPATH_FLAG}${SMB_PRIVATELIB}
 
 CFLAGS.SunOS+=		-DHAVE_SOLARIS_GETGRENT_R
 
+# workaround https://bugzilla.samba.org/show_bug.cgi?id=12502 for now
+CFLAGS.SunOS+=		-DMSG_NOSIGNAL=0
+
 .include "options.mk"
 
 PLIST_VARS+=		macosx
@@ -116,7 +119,7 @@ PLIST_VARS+=		macosx
 PLIST.macosx=		yes
 .endif
 
-.if ${_OPSYS_SHLIB_TYPE} == "dylib"
+.if ${SHLIB_TYPE} == "dylib"
 PLIST_SUBST+=	LIBEXT=dylib
 SAMBA_LIBEXT=	dylib
 .else

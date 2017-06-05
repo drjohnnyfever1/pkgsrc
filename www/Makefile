@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1241 2017/05/24 08:43:13 he Exp $
+# $NetBSD: Makefile,v 1.1246 2017/06/05 15:23:01 adam Exp $
 #
 
 COMMENT=	Packages related to the World Wide Web
@@ -629,6 +629,7 @@ SUBDIR+=	py-django-mptt
 SUBDIR+=	py-django-photologue
 SUBDIR+=	py-django-polymorphic
 SUBDIR+=	py-django-registration
+SUBDIR+=	py-django-rest-framework-proxy
 SUBDIR+=	py-django-reversion
 SUBDIR+=	py-django-sekizai
 SUBDIR+=	py-django-south
@@ -795,6 +796,7 @@ SUBDIR+=	ruby-liquid
 SUBDIR+=	ruby-loofah
 SUBDIR+=	ruby-mechanize
 SUBDIR+=	ruby-multipart-post
+SUBDIR+=	ruby-mustermann
 SUBDIR+=	ruby-mustermann19
 SUBDIR+=	ruby-net-flickr
 SUBDIR+=	ruby-net-http-digest_auth
@@ -821,6 +823,7 @@ SUBDIR+=	ruby-rack-ssl
 SUBDIR+=	ruby-rack-test
 SUBDIR+=	ruby-rack14
 SUBDIR+=	ruby-rack15
+SUBDIR+=	ruby-rack16
 SUBDIR+=	ruby-rails-deprecated_sanitizer
 SUBDIR+=	ruby-rails-html-sanitizer
 SUBDIR+=	ruby-rails32
