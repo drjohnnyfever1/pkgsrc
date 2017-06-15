@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.931 2017/06/04 16:50:10 taca Exp $
+# $NetBSD: Makefile,v 1.933 2017/06/10 16:35:52 taca Exp $
 #
 
 COMMENT=	Text processing utilities (does not include desktop publishing)
@@ -741,6 +741,7 @@ SUBDIR+=	py-jsonlib
 SUBDIR+=	py-jsonlib3
 SUBDIR+=	py-jsonrpclib
 SUBDIR+=	py-jsonschema
+SUBDIR+=	py-jxmlease
 SUBDIR+=	py-libxml2
 SUBDIR+=	py-libxslt
 SUBDIR+=	py-loremipsum
@@ -825,6 +826,7 @@ SUBDIR+=	ruby-fast-stemmer
 SUBDIR+=	ruby-fastercsv
 SUBDIR+=	ruby-feed-normalizer
 SUBDIR+=	ruby-ferret
+SUBDIR+=	ruby-fuzzyurl
 SUBDIR+=	ruby-haml
 SUBDIR+=	ruby-hikidoc
 SUBDIR+=	ruby-hpricot
