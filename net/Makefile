@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1157 2017/06/05 14:53:24 taca Exp $
+# $NetBSD: Makefile,v 1.1160 2017/06/15 18:39:20 nils Exp $
 #
 
 COMMENT=	Networking tools
@@ -604,6 +604,7 @@ SUBDIR+=	proxytunnel
 SUBDIR+=	publicfile
 SUBDIR+=	publicfile-run
 SUBDIR+=	puf
+SUBDIR+=	pulledpork
 SUBDIR+=	pure-ftpd
 SUBDIR+=	pxe
 SUBDIR+=	py-GeoIP
@@ -652,6 +653,7 @@ SUBDIR+=	py-ptt
 SUBDIR+=	py-py3dns
 SUBDIR+=	py-pydns
 SUBDIR+=	py-s3cmd
+SUBDIR+=	py-scp
 SUBDIR+=	py-simplesoap
 SUBDIR+=	py-smb
 SUBDIR+=	py-soaplib
@@ -708,6 +710,7 @@ SUBDIR+=	ruby-ipaddress
 SUBDIR+=	ruby-net-dhcp
 SUBDIR+=	ruby-net-ldap
 SUBDIR+=	ruby-net-ping
+SUBDIR+=	ruby-net-telnet
 SUBDIR+=	ruby-netaddr
 SUBDIR+=	ruby-netrc
 SUBDIR+=	ruby-pluggaloid
