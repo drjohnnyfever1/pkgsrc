@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2017,v 1.2406 2017/06/15 18:41:14 nils Exp $
+$NetBSD: CHANGES-2017,v 1.2413 2017/06/16 18:13:47 schmonz Exp $
 
 Changes to the packages collection and infrastructure in 2017:
 
@@ -3035,3 +3035,12 @@ Changes to the packages collection and infrastructure in 2017:
 	Updated lang/nodejs to 8.1.2 [fhajny 2017-06-15]
 	Updated net/snort to 2.9.9.0 [nils 2017-06-15]
 	Added net/pulledpork version 0.7.2 [nils 2017-06-15]
+	Updated multimedia/libaacs to 0.9.0 [adam 2017-06-15]
+	Updated multimedia/libbluray to 1.0.1 [adam 2017-06-15]
+	Updated multimedia/x264-devel to 20170615 [adam 2017-06-16]
+	Updated lang/nodejs to 8.1.2 [fhajny 2017-06-16]
+	Updated devel/py-setuptools_scm to 1.15.6 [adam 2017-06-16]
+	Updated www/py-django-countries to 4.6.1 [adam 2017-06-16]
+	Updated www/py-django-cms to 3.4.4 [adam 2017-06-16]
+	Updated multimedia/adobe-flash-player to 26.0.0.131 [tsutsui 2017-06-16]
+	Added graphics/p5-Image-JpegTran-AutoRotate version 0.03 [schmonz 2017-06-16]
